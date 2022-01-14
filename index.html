@@ -2,16 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <title>Document</title>
+
     <script>
       if (navigator.userAgent.indexOf("Android") !== -1) {
         window.location.replace(
           "intent://page/104890389572255?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end"
         );
-      } else {
+      } else if (navigator.userAgent.indexOf("Mac") !== -1) {
         window.location.replace("fb://page/?id=104890389572255");
       }
     </script>
-    <title>Document</title>
   </head>
-  <body></body>
+
+  <body>
+    <p id="p1"></p>
+
+    <script>
+      document.getElementById("p1").innerHTML = navigator.userAgent;
+    </script>
+  </body>
 </html>
